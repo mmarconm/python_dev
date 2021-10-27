@@ -1,0 +1,25 @@
+{
+	"name": "Django",
+	"dockerComposeFile": [
+		"../docker-compose.yml",
+	],
+	"service": "web",
+	"workspaceFolder": "/mnt",
+	"settings": {
+		// "python.pythonPath": "/usr/bin/python3",
+	},
+	"extensions": [
+		"ms-python.python",
+		"coenraads.bracket-pair-colorizer"
+	],
+
+	"forwardPorts": [3000, 8000, 5432],
+
+	// "runServices": [],
+
+	// "shutdownAction": "none",
+
+	// "postCreateCommand": "apt-get update && apt-get install -y curl",
+
+	// "remoteUser": "odoo"
+}

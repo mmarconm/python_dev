@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+    web:
+        image: "${IMAGE}"
+        working_dir: /mnt
+        # environment:
+        #     - ODOO_SESSION_REDIS=true
+        depends_on:
+            - db
+        ports:
+            - "${PORT}:8000"
+        # volumes:
+        #     - db_socket:/var/run/postgresql
+        command: sleep infinity
+    db:
+        image: "${DB_IMAGE}"
+        environment:
+            - POSTGRES_DB=postgres
+            - POSTGRES_PASSWORD=admin
+            - POSTGRES_USER=admin
+            - PGDATA=/var/lib/postgresql/data/pgdata
+        volumes:
+            - db_data:/var/lib/postgresql/data/pgdata
+        ports:
+            - "${DB_PORT}:5432"
+volumes:
+    db_data:
