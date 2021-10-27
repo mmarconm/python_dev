@@ -3,6 +3,8 @@ services:
     web:
         image: "${IMAGE}"
         working_dir: /mnt
+        volumes:
+            - ./workspace:/mnt
         # environment:
         #     - ODOO_SESSION_REDIS=true
         depends_on:

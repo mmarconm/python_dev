@@ -43,6 +43,8 @@ COPY --chown=$USER_UID:$USER_UID ./configuration/entrypoint.sh /
 # Install rtlcss (on Debian buster)
 # RUN npm install -g rtlcss
 
+EXPOSE 8000 3000 5432
+
 ENTRYPOINT [ "/entrypoint.sh" ]
 
 USER me
